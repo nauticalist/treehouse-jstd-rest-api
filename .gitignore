@@ -64,3 +64,5 @@ typings/
 *.db
 
 .idea
+
+.DS_Store
