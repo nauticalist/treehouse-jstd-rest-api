@@ -10,7 +10,6 @@ router.get(
   "/",
   asyncHandler(async (req, res) => {
     const courses = await Course.findAll({
-      order: [["id", "DESC"]],
       include: [
         {
           model: User,

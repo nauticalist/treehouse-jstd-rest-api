@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
           allowNull: false,
           validate: {
             notNull: {
-              msg: "Please enter a user id.",
+              msg: "User id is required.",
             },
           },
         },
@@ -45,7 +45,7 @@ module.exports = (sequelize, DataTypes) => {
         },
       },
       description: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: false,
         validate: {
           notNull: {

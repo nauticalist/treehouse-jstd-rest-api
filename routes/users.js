@@ -13,8 +13,9 @@ router.get(
     const user = req.currentUser;
 
     res.json({
-      name: `${user.firstName} ${user.lastName}`,
-      email: user.emailAddress,
+      firstName: user.firstName,
+      lastName: user.lastName,
+      emailAddress: user.emailAddress,
     });
   })
 );
@@ -26,6 +27,7 @@ router.post(
     try {
       await User.create(req.body);
       res.status(201).json({ message: "Account successfully created!" });
+      res.status(201).location("/").end();
     } catch (error) {
       if (
         error.name === "SequelizeValidationError" ||
